@@ -2,30 +2,42 @@
 
 $nav-item-color: #ebebeb;
 $color-primary: #e26a25;
+$color-mid-grey: #a1a1a1;
+
+//mixins 
+
+@mixin page-width {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+//body and global
 
 * {
     box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-size: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: 200;
 }
+
+
 
 //Header Navigation
 .main-header {
     display: flex;
     justify-content: space-between;
     background-color: black;
+    align-items: center;
 
     h2 {
-        margin-left: 15px;
+        margin-left: 5%;
         color: $nav-item-color;
-        font-weight: 300;
-        
+        font-weight: 300;        
         span {
             color: $color-primary;
         }
@@ -35,7 +47,9 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    margin-right: 15px;
+    margin-right: 5%;
+    padding: 10px;
+    
 
     li {
         list-style: none;
@@ -62,6 +76,7 @@ body {
     background-position: center;
     background-size: cover;
     padding-bottom: 60px;
+    
 }
      
     form {
@@ -75,6 +90,10 @@ body {
         background-color: #f1f1f1;
         border-radius: 5px;
         width: 30%;
+        margin-right: 5%;
+        label {
+            margin: 0 0 5px 0;
+        }
          h2 {
             color: #858585;
             text-align: center;
@@ -117,3 +136,29 @@ body {
         padding-top: 30px;
     }
 } 
+
+//Social Media Tab
+
+.section-tab{
+    display: flex;
+    align-items: center;
+    @include page-width();
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.social {
+    flex: 1;
+} p {
+    font-size: 70%;
+    margin-top: 5px;
+    color: $color-mid-grey;
+} h4 {
+    margin-bottom: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    color: $color-mid-grey;
+}
